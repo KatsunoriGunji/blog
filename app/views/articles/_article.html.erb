@@ -1,0 +1,10 @@
+<%# <div class="content_post" style="background-image: url(<%= tweet.image %>
+<div class="content_post">
+  
+  <a class="article-text" href=<%="/articles/#{article.id}" %>><%= article.title %></a>
+  <span class="name">
+    <a class="article-poster-name">
+      <span>投稿者</span><%= User.find(article.user_id) %>
+    </a>
+  </span>
+</div>

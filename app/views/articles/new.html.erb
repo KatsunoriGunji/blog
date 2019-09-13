@@ -1,0 +1,13 @@
+<div class="contents row">
+  <%= form_for @article do |f| %>
+    <h3>
+      投稿する
+    </h3>
+    <%= f.label :title, "Title"%>
+    <%= f.text_area :title %>
+    <%= f.label :text, "Text"%>
+    <%= f.text_area :text %>
+    
+    <%= f.submit "投稿する" %>
+  <% end %>
+</div>

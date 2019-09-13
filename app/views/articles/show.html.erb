@@ -1,0 +1,24 @@
+<div class ="contents row">
+    <p><%= @article.title %></p>
+  <div class="content_post" style="background-image: url(<%= @article.image %>);">
+    <% if user_signed_in? && current_user.id == @article.user_id %> exit
+      <div class="more">
+        <%#<span><%= image_tag 'arrow_top.png' %> <%#</span>%>
+        <ul class="more_list">
+          <li>
+            <%= link_to '編集', "/articles/#{@article.id}/edit", method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', "/articles/#{@article.id}", method: :delete %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+    <p class="show-text"><%= @article.text %></p>
+    <span class="name">
+      <a class="article-poster-name">
+        <span>投稿者</span><%= @article.user.nickname %>
+      </a>
+    </span>
+  </div>
+</div>
